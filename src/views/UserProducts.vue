@@ -20,43 +20,6 @@
       </div>
     </div>
     <div class="row g-0">
-      <!-- <div class="col-md-3 px-2 mb-4">
-        <div class="sticky-top" style="top: 150px">
-          <h3>商品種類</h3>
-          <hr />
-          <div class="list-group mb-3" role="tablist">
-            <a href="#" class="list-group-item list-group-item-action"
-            :class="{ active: category === 'all' }"
-            @click.prevent="goToCategory('all')">
-              全部
-            </a>
-            <a href="#" class="list-group-item list-group-item-action"
-            :class="{ active: category === '魚隻'}"
-            @click.prevent="goToCategory('魚隻')"
-            >
-              魚隻
-            </a>
-            <a href="#" class="list-group-item list-group-item-action"
-            :class="{ active: category === '造景'}"
-            @click.prevent="goToCategory('造景')"
-            >
-              造景
-            </a>
-            <a href="#" class="list-group-item list-group-item-action disabled"
-            :class="{ active: category === '設備'}"
-            @click.prevent="goToCategory('設備')"
-            >
-              設備
-            </a>
-            <a href="#" class="list-group-item list-group-item-action disabled"
-            :class="{ active: category === '套裝'}"
-            @click.prevent="goToCategory('套裝')"
-            >
-              套裝
-            </a>
-          </div>
-        </div>
-      </div> -->
       <ul class="nav justify-content-center mt-3 mb-5">
         <li class="nav-item order-last order-md-0">
           <a class="nav-link categoryItem" href="#"
@@ -95,40 +58,6 @@
         :pages="pagination"
         v-on:emit-pages="getProducts"
         ></Pagination>
-        <!-- <nav aria-label="Page navigation">
-          <ul
-            class="
-              pagination pagination-lg
-              justify-content-md-end justify-content-center
-              mt-3
-              px-3
-            "
-          >
-            <li class="page-item">
-              <a
-                class="page-link rounded-0 py-2 px-3"
-                href="#"
-                aria-label="Previous"
-              >
-                <i class="material-icons lh-base">arrow_left</i>
-              </a>
-            </li>
-            <li class="page-item active">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a
-                class="page-link rounded-0 py-2 px-3"
-                href="#"
-                aria-label="Next"
-              >
-                <i class="material-icons lh-base">arrow_right</i>
-              </a>
-            </li>
-          </ul>
-        </nav> -->
       </div>
     </div>
   </div>
@@ -185,9 +114,8 @@ export default {
       })
     },
     getLikes () {
-      const likeStr = localStorage.getItem('likelist')
+      const likeStr = localStorage.getItem('likelist') ? localStorage.getItem('likelist') : '[]'
       this.likes = JSON.parse(likeStr)
-      // console.log(this.likes, this.likesId)
     },
     updateLikes (data) {
       if (!this.likesId.includes(data.id)) {

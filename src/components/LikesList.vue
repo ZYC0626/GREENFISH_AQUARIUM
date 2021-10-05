@@ -64,7 +64,8 @@ export default {
   },
   methods: {
     getLikes () {
-      const likeStr = localStorage.getItem('likelist')
+      // console.log(localStorage.getItem('likelist'))
+      const likeStr = localStorage.getItem('likelist') ? localStorage.getItem('likelist') : '[]'
       this.likes = JSON.parse(likeStr)
       this.likesId = this.likes.map(x => x.id)
     },
