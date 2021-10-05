@@ -2,12 +2,12 @@
   <div class="container-fluid login-bg py-8">
     <div class="container">
       <div class="row justify-content-center mb-3">
-        <div class="col-md-4">
+        <div class="col-lg-4 col-md-7">
           <h1 class="login-title">翠魚水族</h1>
         </div>
       </div>
       <form class="row justify-content-center" v-on:submit.prevent="signIn">
-        <div class="col-md-4 login-form">
+        <div class="col-lg-4 col-md-7 login-form">
           <h2 class="login-name">後台登入</h2>
           <hr>
           <div class="mb-2">

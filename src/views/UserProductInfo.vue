@@ -245,10 +245,11 @@ export default {
     }
   },
   created () {
-    this.emitter.on('updatelikeId', this.getLikes)
     this.id = this.$route.params.productId
+    console.log(this.id)
     this.getLikes()
     this.getProduct()
+    this.emitter.on('updatelikeId', this.getLikes)
   }
 }
 </script>
