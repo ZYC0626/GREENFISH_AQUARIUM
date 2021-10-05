@@ -100,7 +100,6 @@ export default {
       this.$http.get(url, this.tempProduct).then((response) => {
         this.coupons = response.data.coupons
         this.isLoading = false
-        console.log(response)
       })
     },
     updateCoupon (tempCoupon) {
@@ -114,7 +113,6 @@ export default {
         title = '修改優惠券'
       }
       this.$http[httpMethod](url, { data: this.tempCoupon }).then((response) => {
-        console.log(response, tempCoupon)
         this.$httpMessageState(response, title)
         this.getCoupons()
         this.$refs.couponModal.hideModal()

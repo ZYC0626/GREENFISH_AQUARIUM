@@ -36,10 +36,8 @@ export default {
     const api = `${process.env.VUE_APP_API}api/user/check`
     this.$http.post(api)
       .then((res) => {
-        // console.log(res, 'test')
-        console.log(api)
         if (!res.data.success) {
-          console.log('error')
+          // console.log('error')
           this.$router.push('/login')
         }
       })

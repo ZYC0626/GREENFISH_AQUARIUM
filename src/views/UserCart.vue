@@ -248,7 +248,7 @@ export default {
     },
     countButton (item, value) {
       item.qty += value
-      console.log(item)
+      // console.log(item)
       this.updateCart(item)
     },
     updateCart (item) {

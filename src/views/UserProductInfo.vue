@@ -29,13 +29,8 @@
     </nav>
     <div class="row">
       <div class="col-lg-8">
-        <!-- <img
-          class="w-100"
-          :src="product.imageUrl"
-          alt="img"
-        /> -->
         <div class="bg-cover bg-center prodInfo-img"
-        :style="{ 'background-image': 'url(' + product.imageUrl + ')' }"></div>
+        :style="{ 'background-image': 'url(' + product.imageUrl + ')' }" v-if="product.imageUrl"></div>
       </div>
       <div class="col-lg-4 py-3">
         <div class="d-flex justify-content-between align-items-center">
@@ -113,7 +108,7 @@
     </div>
     <h2 class="mt-3">你可能也喜歡...</h2>
     <hr>
-    <Swiper :products="proudcts"></Swiper>
+    <Swiper :products="samecategory"></Swiper>
   </section>
 </template>
 
@@ -134,7 +129,7 @@ export default {
       qty: 1,
       likes: [],
       likesId: [],
-      proudcts: [], // samecategory
+      samecategory: [],
       likeRes: {
         data: {
           data: {},
@@ -165,7 +160,7 @@ export default {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/product/${this.id}`
       this.isLoading = true
       this.$http.get(api).then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         this.isLoading = false
         if (response.data.success) {
           this.product = response.data.product
@@ -231,7 +226,7 @@ export default {
       this.$http.get(url).then((response) => {
         if (response.data.success) {
           //
-          this.proudcts =
+          this.samecategory =
           response.data.products.filter(x => x.category === this.product.category).length > 1 ? response.data.products.filter(x => x.category === this.product.category) : response.data.products
         }
         this.isLoading = false
@@ -246,7 +241,7 @@ export default {
   },
   created () {
     this.id = this.$route.params.productId
-    console.log(this.id)
+    // console.log(this.id)
     this.getLikes()
     this.getProduct()
     this.emitter.on('updatelikeId', this.getLikes)

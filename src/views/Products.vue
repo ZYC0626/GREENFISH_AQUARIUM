@@ -88,13 +88,13 @@ export default {
   inject: ['emitter'],
   methods: {
     getProducts (page = 1) {
-      console.log(page)
+      // console.log(page)
       this.isLoading = true
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/products/?page=${page}`
       this.$http.get(api).then((res) => {
         this.isLoading = false
         if (res.data.success) {
-          console.log(res)
+          // console.log(res)
           this.products = res.data.products
           this.pagination = res.data.pagination
         }
@@ -123,7 +123,7 @@ export default {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product/${item.id}`
       this.$http.delete(api)
         .then((res) => {
-          console.log(res)
+          // console.log(res)
           // this.isLoading = false
           delProdModal.hideModal()
           this.getProducts()
@@ -144,7 +144,7 @@ export default {
       this.$http[httpMethod](api, { data: this.tempProduct })
         .then((res) => {
           if (res.data.success) {
-            console.log(res)
+            // console.log(res)
             productComponent.hideModal()
             this.getProducts()
             this.emitter.emit('push-message', {

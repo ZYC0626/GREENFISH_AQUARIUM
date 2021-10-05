@@ -120,7 +120,6 @@ export default {
         this.orders = response.data.orders
         this.pagination = response.data.pagination
         this.isLoading = false
-        console.log(response)
       })
     },
     openModal (isNew, item) {
@@ -136,7 +135,6 @@ export default {
     },
     updatePaid (item) {
       this.isLoading = true
-      console.log('test')
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/order/${item.id}`
       const paid = {
         is_paid: item.is_paid
@@ -151,7 +149,7 @@ export default {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/order/${this.tempOrder.id}`
       this.isLoading = true
       this.$http.delete(url).then((response) => {
-        console.log(response)
+        // console.log(response)
         const delComponent = this.$refs.delModal
         delComponent.hideModal()
         this.getOrders(this.currentPage)

@@ -77,11 +77,11 @@ export default {
     getCart () {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       this.$http.get(api).then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         this.cart = response.data.data
         this.count = this.cart.carts.length
         this.coupon = this.count > 0 ? (this.cart.carts[0].coupon ? this.cart.carts[0].coupon.code : '') : ''
-        console.log(this.coupon)
+        // console.log(this.coupon)
       })
     },
     delCart (item) {
