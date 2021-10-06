@@ -21,16 +21,12 @@ a{
 .bg-center {
     background-position: center center;
 }
-.bg-fixed {
-    background-attachment: fixed;
-}
 .bg-left {
     background-position: 75% 50%;
 }
 .bg-right {
     background-position: 20% 50%;
 }
-
 
 .bg-xl-transparent {
     background-color: rgba(255, 255, 255, 0.452);
@@ -51,19 +47,6 @@ a{
     }
 }
 
-.material-icons.md-18 {
-    font-size: 18px;
-}
-.material-icons.md-24 {
-    font-size: 24px;
-}
-.material-icons.md-36 {
-    font-size: 36px;
-}
-.material-icons.md-48 {
-    font-size: 48px;
-}
-
 .btn-primary:hover {
     color: $blue-800;
     background-color: #fff;
@@ -73,6 +56,13 @@ a{
     top: -1px;
     right: -5px;
 }
+.cart-img{
+    width: 135px; 
+    height: 100px;
+    border: 2px solid rgb(216, 216, 216);
+    border-radius: 2px;
+}
+
 .bi-star-fill, .bi-star {
     color: $yellow;
     &:hover{
@@ -82,12 +72,7 @@ a{
 .mw-300{
     min-width: 300px;
 }
-.cart-img{
-    width: 135px; 
-    height: 100px;
-    border: 2px solid rgb(216, 216, 216);
-    border-radius: 2px;
-}
+
 .prodInfo-img{
     height: 350px;
     width: 100%;
@@ -123,23 +108,19 @@ footer {
 .landing {
     height: 350px;
 }
-.toast-position{
-    z-index: 999;
-    top: 15%;
-    @include media-breakpoint-up(md) {
-        top: 15%;
-    }
-}
-.toast-border{
-    border-left: 6px solid transparent;
-}
-.toast-content{
-    .title{
-        font-size: 1rem;
-        margin-bottom: 0.2rem;
-    }
-    .content{
-        font-size: 0.6rem;
-        color: gray;
+
+.bg-atta-fixed {
+    // background-attachment: fixed;
+    &::before{
+        content: "";
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -100;
+        background: url(https://images.unsplash.com/photo-1573472420143-0c68f179bdc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2094&q=80) no-repeat 50% center;
+        background-size: cover;
     }
 }

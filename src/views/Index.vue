@@ -2,7 +2,7 @@
   <Loading :active="isLoading">
     <div class='loader-wrapper'><span class="loader"></span></div>
   </Loading>
-  <section class="promo">
+  <section class="promo bg-white">
     <div class="promo_box">
       <h1 class="title d-md-inline-block d-none">
         GREEN FISH<br />
@@ -66,13 +66,13 @@
     </div>
   </section>
 
-  <section class="wave-bottom d-md-block d-none" id="maincontent">
+  <section class="wave-bottom d-md-block d-none bg-white" id="maincontent">
   </section>
 
-  <section class="container-fluid px-0 my-md-0 my-lg-8"
+  <section class="container-fluid px-0 py-md-0 py-lg-8 bg-white"
   >
     <div class="container-lg slide-in slide-start">
-      <div class="d-lg-none bg-white px-0 my-4">
+      <div class="d-lg-none bg-white px-0 py-4">
         <div class="row justify-content-center">
           <div class="col-10 col-md-8">
             <p class="fs-1 text-center intro-banner-title mb-0"
@@ -110,41 +110,49 @@
     </div>
   </section>
   <section>
-    <div class="container-lg mt-4 px-lg-0 px-4">
-      <div class="row g-2 mb-2 align-items-end">
-        <div class="col-3">
-          <div class="py-8 bg-center bg-cover bg-fixed" style="
-          background-image: url(https://images.unsplash.com/photo-1573472420143-0c68f179bdc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2094&q=80);"
-          >
+    <div class="container-fluid p-0">
+      <!-- 替代 background-attachment: fixed -->
+      <div class="d-flex align-items-start">
+        <div class="bg-white border-0" style="height: 240px; width: 13%;"></div>
+        <div class="bg-white border-0" style="height: 10px;   width: 23%;"></div>
+        <div class="bg-white border-0" style="height: 240px; width: 1%;"></div>
+        <div class="bg-white border-0" style="height: 50px;  width: 42%;"></div>
+        <div class="bg-white border-0" style="height: 240px; width: 25%;"></div>
+      </div>
+      <div class="bg-white border-0" style="height: 8px; width: 100%;"></div>
+      <div class="d-flex align-items-end">
+        <div class="bg-white border-0" style="height: 260px; width: 17%;"></div>
+        <div class="bg-white border-0" style="height: 60px;  width: 40%;"></div>
+        <div class="bg-white border-0" style="height: 260px; width: 1%;"></div>
+        <div class="bg-white border-0" style="height: 10px;   width: 30%;"></div>
+        <div class="bg-white border-0" style="height: 260px; width: 12%;"></div>
+      </div>
+      <!-- <div class="row g-2 mb-2 align-items-end bg-white">
+        <div class="col-3 bg-transprarent">
+          <div class="py-8">
           </div>
         </div>
         <div class="col-7">
-          <div class="py-7 bg-center bg-cover bg-fixed" style="
-          background-image: url(https://images.unsplash.com/photo-1573472420143-0c68f179bdc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2094&q=80);"
-          >
+          <div class="py-7">
           </div>
         </div>
       </div>
       <div class="row g-2 justify-content-end">
         <div class="col-6">
-          <div class="py-7 bg-center bg-cover bg-fixed" style="
-          background-image: url(https://images.unsplash.com/photo-1573472420143-0c68f179bdc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2094&q=80);"
-          >
+          <div class="py-7">
           </div>
         </div>
         <div class="col-5">
-          <div class="py-8 bg-center bg-cover bg-fixed" style="
-          background-image: url(https://images.unsplash.com/photo-1573472420143-0c68f179bdc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2094&q=80);"
-          >
+          <div class="py-8">
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
-  <section id="maincontent" class="container-fluid px-0 my-md-0 my-lg-7">
+  <section class="container-fluid px-0 py-md-0 py-lg-7 bg-white">
     <div class="container-lg slide-in slide-start">
-      <div class="d-lg-none bg-white px-0 my-4">
+      <div class="d-lg-none bg-white px-0 py-4">
         <div class="row justify-content-center">
           <div class="col-9 col-md-8">
             <p class="fs-1 text-center intro-banner-title mb-0"
@@ -181,9 +189,8 @@
     </div>
   </section>
   <section>
-    <div class="container-lg  py-4 bg-cover bg-center bg-fixed"
-    style="
-    background-image: url(https://images.unsplash.com/photo-1579967327980-2a4117da0e4a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2049&q=80);">
+    <div class="container-lg py-4 bg-atta-fixed"
+    >
       <div class="row justify-content-center">
         <div class="col-md-6 col-8">
           <p class="text-center  p-3 fs-2 intro-banner"
@@ -193,7 +200,7 @@
     </div>
   </section>
   <CouponInfo></CouponInfo>
-  <section class="py-5">
+  <section class="py-5 bg-white">
     <div class="container">
       <h2 class="">任君挑選 <span class="fs-6"><router-link class="text-decoration-none" to="/products/all">more<i class="bi bi-plus"></i></router-link></span></h2>
       <hr>

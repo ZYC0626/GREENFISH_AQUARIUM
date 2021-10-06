@@ -6,7 +6,7 @@ import router from './router'
 import Loading from 'vue3-loading-overlay'
 import 'vue3-loading-overlay/dist/vue3-loading-overlay.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import 'bootstrap/dist/js/bootstrap.bundle'
+import 'bootstrap'
 import {
   Form, Field, ErrorMessage, defineRule, configure
 } from 'vee-validate'

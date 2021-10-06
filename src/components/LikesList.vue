@@ -47,13 +47,20 @@
         <p v-if="likes.length === 0">您還沒有將喜愛的商品加入最愛</p>
         <p>快使用<i class="bi bi-star mx-2"></i>將商品加入最愛列表吧 !</p>
         <p>讓你快速抵達商品資訊 !</p>
-        <router-link to="/products/all" class="btn btn-outline-primary mt-2">前往商品列表<i class="bi bi-chevron-right"></i></router-link>
+        <!-- <router-link to="/products/all" class="btn btn-outline-primary mt-2"
+        data-bs-toggle="offcanvas" data-bs-target="#collectCanvas">前往商品列表<i class="bi bi-chevron-right"></i></router-link> -->
+        <button type="button" class="btn btn-outline-primary mt-2"
+        data-bs-toggle="offcanvas" data-bs-target="#collectCanvas"
+        @click="goToProducts">
+        前往商品列表<i class="bi bi-chevron-right"></i>
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+// import Offcanvas from 'bootstrap/js/dist/offcanvas'
 export default {
   data () {
     return {
@@ -71,6 +78,9 @@ export default {
     },
     goToProd (id) {
       this.$router.push(`/product/${id}`)
+    },
+    goToProducts () {
+      this.$router.push('/products/all')
     },
     updateLikes (data) {
       // console.log(data)

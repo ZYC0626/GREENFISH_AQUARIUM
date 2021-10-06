@@ -240,7 +240,7 @@ export default {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       this.isLoading = true
       this.$http.get(api).then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         this.isLoading = false
         this.cart = response.data.data
         this.emitter.emit('updatecart')
