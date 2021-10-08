@@ -29,7 +29,7 @@
   </div>
 </template>
 <script>
-import ProdCard from '@/components/ProdCard.vue'
+import ProdCard from '@/components/Front/ProdCard.vue'
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue'
 // Import Swiper styles

@@ -92,9 +92,9 @@
 </template>
 
 <script>
-import DelModal from '@/components/DelModal.vue'
-import OrderModal from '@/components/orderModal.vue'
-import Pagination from '@/components/Pagination.vue'
+import DelModal from '@/components/Back/DelModal.vue'
+import OrderModal from '@/components/Back/orderModal.vue'
+import Pagination from '@/components/Share/Pagination.vue'
 export default {
   data () {
     return {

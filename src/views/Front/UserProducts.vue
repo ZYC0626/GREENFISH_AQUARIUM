@@ -63,8 +63,8 @@
   </div>
 </template>
 <script>
-import ProdCard from '@/components/ProdCard.vue'
-import Pagination from '@/components/Pagination.vue'
+import ProdCard from '@/components/Front/ProdCard.vue'
+import Pagination from '@/components/Share/Pagination.vue'
 
 export default {
   components: {

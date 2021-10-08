@@ -219,7 +219,7 @@
 </template>
 
 <script>
-import CouponInfo from '@/components/CouponInfo.vue'
+import CouponInfo from '@/components/Front/CouponInfo.vue'
 export default {
   components: {
     CouponInfo

@@ -219,9 +219,9 @@
   </div>
 </template>
 <script>
-import Swiper from '@/components/Swiper.vue'
+import Swiper from '@/components/Front/Swiper.vue'
 import Carousel from 'bootstrap/js/dist/carousel'
-import CouponInfo from '@/components/CouponInfo.vue'
+import CouponInfo from '@/components/Front/CouponInfo.vue'
 
 export default {
   components: {

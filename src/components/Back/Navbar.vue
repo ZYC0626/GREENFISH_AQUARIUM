@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <div class="container-fluid">
-      <router-link to="/dashboard/products" class="navbar-brand m-0"><img src="../assets/images/LOGOWhite.png" height="50" alt="LOGO" /></router-link>
+      <router-link to="/dashboard/products" class="navbar-brand m-0"><img src="@/assets/images/LOGOWhite.png" height="50" alt="LOGO" /></router-link>
       <button
         class="navbar-toggler"
         type="button"

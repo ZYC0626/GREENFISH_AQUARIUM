@@ -14,9 +14,9 @@
 
 <script>
 import emitter from '@/methods/emitter'
-import ToastMessages from '../components/ToastMessages.vue'
-import Navbar from '../components/Navbar.vue'
-import FixedTool from '../components/FixedTool.vue'
+import ToastMessages from '@/components/Share/ToastMessages.vue'
+import Navbar from '@/components/Back/Navbar.vue'
+import FixedTool from '@/components/Back/FixedTool.vue'
 
 export default {
   components: {

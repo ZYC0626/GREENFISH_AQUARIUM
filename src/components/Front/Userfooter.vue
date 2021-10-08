@@ -3,7 +3,7 @@
     <div class="container px-md-5">
       <div class="row mt-3 g-0 justify-content-between align-items-center">
         <div class="col-md-6">
-          <a href="#"><img src="../assets/images/LOGOWhite.png" height="50" alt="LOGO" /></a>
+          <a href="#"><img src="@/assets/images/LOGOWhite.png" height="50" alt="LOGO" /></a>
           <ul class="list-unstyled d-flex ms-3 mt-2">
             <li>
               <a href="#"><i class="bi bi-instagram pe-3"></i></a>

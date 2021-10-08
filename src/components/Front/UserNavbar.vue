@@ -12,13 +12,13 @@
       </button>
       <a class="navbar-brand m-0" href="#">
         <img
-          src="../assets/images/WLOGODeepBlue.png"
+          src="@/assets/images/WLOGODeepBlue.png"
           height="55"
           alt="LOGO"
           class="d-md-inline-block d-none"
         />
         <img
-          src="../assets/images/WLOGODeepBlue.png"
+          src="@/assets/images/WLOGODeepBlue.png"
           height="40"
           alt="LOGO"
           class="d-inline-block d-md-none"
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import Cart from '@/components/CartDropdown.vue'
+import Cart from '@/components/Front/CartDropdown.vue'
 
 export default {
   components: {

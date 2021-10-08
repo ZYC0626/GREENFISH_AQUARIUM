@@ -60,8 +60,8 @@
 </template>
 
 <script>
-import CouponModal from '@/components/CouponModal.vue'
-import DelModal from '@/components/DelModal.vue'
+import CouponModal from '@/components/Back/CouponModal.vue'
+import DelModal from '@/components/Back/DelModal.vue'
 export default {
   components: { CouponModal, DelModal },
   data () {
