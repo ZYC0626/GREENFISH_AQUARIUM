@@ -90,24 +90,26 @@ export default {
         url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`
       }
       this.$http.get(url).then((response) => {
-        if (this.category !== 'all') {
-          this.products = response.data.products.filter(x => x.category === this.category)
-          // make custom pagination
-          const pageItem = 5
-          const totalPage = Math.ceil(this.products.length / pageItem)
-          const start = (page - 1) * pageItem
-          const end = page * pageItem
-          this.products = this.products.slice(start, end)
-          this.pagination = {
-            category: null,
-            current_page: page,
-            has_next: page < totalPage,
-            has_pre: page !== 1,
-            total_pages: totalPage
+        if (response.data.success) {
+          if (this.category !== 'all') {
+            this.products = response.data.products.filter(x => x.category === this.category)
+            // make custom pagination
+            const pageItem = 5
+            const totalPage = Math.ceil(this.products.length / pageItem)
+            const start = (page - 1) * pageItem
+            const end = page * pageItem
+            this.products = this.products.slice(start, end)
+            this.pagination = {
+              category: null,
+              current_page: page,
+              has_next: page < totalPage,
+              has_pre: page !== 1,
+              total_pages: totalPage
+            }
+          } else {
+            this.products = response.data.products
+            this.pagination = response.data.pagination
           }
-        } else {
-          this.products = response.data.products
-          this.pagination = response.data.pagination
         }
         this.isLoading = false
       })
@@ -163,9 +165,6 @@ export default {
       },
       deep: true
     },
-    category: function (val) {
-      this.getProducts()
-    },
     $route () {
       // 相同path 不同 praram 時需要 透過watch $route 來重新Render
       if (this.$route.name === 'products') {
@@ -182,6 +181,7 @@ export default {
   },
   created () {
     this.category = this.$route.params.category
+    this.getProducts()
     this.getLikes()
   }
 }
