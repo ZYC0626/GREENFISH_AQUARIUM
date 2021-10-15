@@ -15,7 +15,7 @@
 
   <section class="container py-4" ref="content">
     <a href="#" @click.prevent="$router.go(-1)"><i class="bi bi-arrow-left me-3 fs-2"></i></a>
-    <nav class="">
+    <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <router-link to="/products/all" class="text-decoration-none">全部</router-link>
@@ -145,8 +145,7 @@ export default {
         this.qty = 1
       }
     },
-    $route (to, from) {
-      // console.log(to, from)
+    $route () {
       // 相同path 不同 praram 時需要 透過watch $route 來重新Render
       if (this.$route.name === 'prodInfo') {
         this.id = this.$route.params.productId
@@ -160,7 +159,6 @@ export default {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/product/${this.id}`
       this.isLoading = true
       this.$http.get(api).then((response) => {
-        // console.log(response.data)
         this.isLoading = false
         if (response.data.success) {
           this.product = response.data.product
@@ -181,7 +179,6 @@ export default {
         this.$httpMessageState(response, '加入購物車')
         this.isAddCart = false
         if (response.data.success) {
-          // console.log('加入成功')
           this.emitter.emit('updatecart')
         }
       })
@@ -192,7 +189,6 @@ export default {
       this.likesId = this.likes.map(x => x.id)
     },
     updateLikes (data) {
-      // console.log(data)
       if (!this.likesId.includes(data.id)) {
         this.likes.push({
           id: data.id,
@@ -241,7 +237,6 @@ export default {
   },
   created () {
     this.id = this.$route.params.productId
-    // console.log(this.id)
     this.getLikes()
     this.getProduct()
     this.emitter.on('updatelikeId', this.getLikes)

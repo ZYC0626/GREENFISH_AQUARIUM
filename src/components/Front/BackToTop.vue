@@ -17,8 +17,7 @@ export default {
     goToTop () {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     },
-    handleScroll (e) {
-      // console.log(window.scrollY)
+    handleScroll () {
       const el = document.querySelector('.toTop')
       if (window.scrollY > 500) {
         el.classList.add('active')

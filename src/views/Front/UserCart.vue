@@ -31,12 +31,6 @@
           <tbody>
             <tr v-for="(item) in cart.carts" :key="item.id">
               <td class="align-middle">
-                <!-- <img
-                  :src="item.product.imageUrl"
-                  class="img-thumbnail me-5 mb-2 mb-lg-0"
-                  alt="#"
-                  width="150"
-                /> -->
                 <div class="d-lg-flex align-items-center">
                   <div class="bg-cover bg-center me-lg-4 mb-2 mb-lg-0 cart-img"
                     :style="{ 'background-image': 'url(' + item.product.imageUrl + ')' }"></div>
@@ -104,12 +98,6 @@
             <tr v-for="(item) in cart.carts" :key="item.id">
               <td colspan="2">
                 <div class="d-flex justify-content-between border-bottom py-2">
-                  <!-- <img
-                    :src="item.product.imageUrl"
-                    class="img-thumbnail me-lg-4"
-                    alt="#"
-                    width="150"
-                  /> -->
                   <div class="bg-cover bg-center cart-img"
                   :style="{ 'background-image': 'url(' + item.product.imageUrl + ')' }"></div>
                   <div
@@ -240,7 +228,6 @@ export default {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       this.isLoading = true
       this.$http.get(api).then((response) => {
-        // console.log(response.data)
         this.isLoading = false
         this.cart = response.data.data
         this.emitter.emit('updatecart')
@@ -248,14 +235,12 @@ export default {
     },
     countButton (item, value) {
       item.qty += value
-      // console.log(item)
       this.updateCart(item)
     },
     updateCart (item) {
       if (!item.qty) {
         // 防0
         item.qty = 1
-        // return
       }
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${item.id}`
       this.status.loadingItem = item.id
@@ -294,7 +279,6 @@ export default {
       }
       this.$http.post(url, { data: coupon })
         .then((res) => {
-          // console.log(res.data)
           this.$httpMessageState(res, '套用優惠碼')
           this.isLoading = false
           this.getCart()

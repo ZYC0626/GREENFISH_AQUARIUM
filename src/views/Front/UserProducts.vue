@@ -109,7 +109,6 @@ export default {
           this.products = response.data.products
           this.pagination = response.data.pagination
         }
-        // console.log(this.pagination)
         this.isLoading = false
       })
     },
@@ -146,7 +145,6 @@ export default {
             success: true
           }
         }
-        // console.log(n, o)
         if (n.length !== o.length) {
           this.$httpMessageState(res, '從最愛列表移除')
         } else {
@@ -166,11 +164,9 @@ export default {
       deep: true
     },
     category: function (val) {
-      // console.log('val', val)
       this.getProducts()
     },
-    $route (to, from) {
-      // console.log(to, from)
+    $route () {
       // 相同path 不同 praram 時需要 透過watch $route 來重新Render
       if (this.$route.name === 'products') {
         this.category = this.$route.params.category

@@ -16,8 +16,8 @@
   <div class="container py-4 px-md-6 mt-md-6 mt-4">
     <ul class="progressbar">
       <li class="active"><span class="progressbar_text">填寫資料</span></li>
-      <li class=""><span class="progressbar_text">確認付款</span></li>
-      <li class=""><span class="progressbar_text">訂單完成</span></li>
+      <li><span class="progressbar_text">確認付款</span></li>
+      <li><span class="progressbar_text">訂單完成</span></li>
     </ul>
   </div>
 

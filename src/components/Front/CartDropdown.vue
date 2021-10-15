@@ -77,11 +77,9 @@ export default {
     getCart () {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       this.$http.get(api).then((response) => {
-        // console.log(response.data)
         this.cart = response.data.data
         this.count = this.cart.carts.length
         this.coupon = this.count > 0 ? (this.cart.carts[0].coupon ? this.cart.carts[0].coupon.code : '') : ''
-        // console.log(this.coupon)
       })
     },
     delCart (item) {
@@ -94,8 +92,7 @@ export default {
     }
   },
   watch: {
-    $route (to, from) {
-      // console.log(to, from)
+    $route (to) {
       if (to.fullPath === '/cart' || to.fullPath === '/checkoutInfo' || this.$route.name === 'checkoutPay') {
         this.lock = true
       } else {
@@ -107,7 +104,6 @@ export default {
   created () {
     this.getCart()
     this.emitter.on('updatecart', this.getCart)
-    // console.log(this.$route, 'route')
     if (this.$route.fullPath === '/cart' || this.$route.fullPath === '/checkoutInfo') {
       this.lock = true
     }

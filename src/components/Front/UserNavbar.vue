@@ -65,14 +65,12 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   watch: {
-    $route (to, from) {
+    $route () {
       this.routeName = this.$route.name
-      // console.log(this.routeName)
     }
   },
   methods: {
-    handleScroll (e) {
-      // console.log(window.scrollY)
+    handleScroll () {
       const el = document.querySelector('.navbar')
       if (window.scrollY > 10) {
         el.classList.add('bg-light')

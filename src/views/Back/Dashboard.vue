@@ -1,7 +1,7 @@
 <template>
   <Navbar></Navbar>
   <ToastMessages></ToastMessages>
-  <fixedTool></fixedTool>
+  <FixedTool></FixedTool>
   <div class="container-fluid pb-4" style="min-height: 85vh;">
     <router-view/>
   </div>
@@ -31,13 +31,11 @@ export default {
   },
   created () {
     const token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1')
-    // console.log(token)
     this.$http.defaults.headers.common.Authorization = `${token}`
     const api = `${process.env.VUE_APP_API}api/user/check`
     this.$http.post(api)
       .then((res) => {
         if (!res.data.success) {
-          // console.log('error')
           this.$router.push('/login')
         }
       })

@@ -43,7 +43,7 @@
                 v-on:change="uploadFile"
                 ref="fileInput"/>
               </div>
-              <img class="img-fluid" alt="" :src="tempProduct.imageUrl"/>
+              <img class="img-fluid" :alt="tempProduct.title" :src="tempProduct.imageUrl"/>
               <!-- 延伸技巧，多圖 -->
               <!-- <div class="mt-5">
                 <div class="mb-3 input-group">
@@ -200,7 +200,6 @@ export default {
   methods: {
     uploadFile () {
       const uploadedFile = this.$refs.fileInput.files[0]
-      // console.dir(uploadedFile)
       const select = this.$refs.fileInput.id
       const formData = new FormData()
       formData.append('file-to-upload', uploadedFile)

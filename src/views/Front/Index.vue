@@ -202,7 +202,7 @@
   <CouponInfo></CouponInfo>
   <section class="py-5 bg-white">
     <div class="container">
-      <h2 class="">任君挑選 <span class="fs-6"><router-link class="text-decoration-none" to="/products/all">more<i class="bi bi-plus"></i></router-link></span></h2>
+      <h2>任君挑選 <span class="fs-6"><router-link class="text-decoration-none" to="/products/all">more<i class="bi bi-plus"></i></router-link></span></h2>
       <hr>
       <Swiper :products="proudcts"></Swiper>
     </div>
@@ -210,8 +210,8 @@
 
   <div class="container-fluid bg-light">
     <div class="container  py-4">
-      <h2 class="">...或親自光臨</h2>
-        <hr class="">
+      <h2>...或親自光臨</h2>
+        <hr>
         <iframe class=" slide-in slide-start"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14447.487332366718!2d121.78981246977538!3d25.14002359999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x345d4f7807d7ab5d%3A0xe005c55719594f84!2z5ZyL56uL5rW35rSL56eR5oqA5Y2a54mp6aSo!5e0!3m2!1szh-TW!2stw!4v1629706802787!5m2!1szh-TW!2stw"
         width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -234,14 +234,12 @@ export default {
     }
   },
   methods: {
-    handleResize (e) {
+    handleResize () {
       const wave = document.querySelector('.water-waves')
       const wavew = wave.clientWidth
-      // console.log(wavew)
       wave.style.height = `${wavew}px`
     },
-    handleScroll (e) {
-      // console.log(document.querySelector('#intro-first'))
+    handleScroll () {
       const els = document.querySelectorAll('.slide-in')
       els.forEach((el) => {
         if (window.scrollY >= el.getBoundingClientRect().top) {
@@ -266,7 +264,6 @@ export default {
     },
     reworkCarousel () {
       // when router change ,boostrap plugin need reload
-      // console.log(document.querySelector('#carouselHead'))
       const carouselEl = document.querySelector('#carouselHead')
       const mycarousel = new Carousel(carouselEl)
       mycarousel.cycle()

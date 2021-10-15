@@ -6,7 +6,7 @@
     </div>
     <!-- <div class="prodCard-tag" v-if="tag">推薦</div> -->
     <a class="hover" href="#" @click.prevent="getProduct(prod.id)">
-      <div class="prodCardImg" :style="{ 'background-image': 'url(' + prod.imageUrl + ')' }">
+      <div class="prodCardImg" :style="{ 'background-image': `url(${prod.imageUrl})` }">
       </div>
     </a>
     <a href="#" class="h3 prodCard-title text-decoration-none" @click.prevent="getProduct(prod.id)">{{ prod.title }}</a>
@@ -45,7 +45,6 @@ export default {
       this.$router.push(`/product/${id}`)
     },
     addCart (id) {
-      // console.log(id)
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       this.status.loadingItem = id
       const cart = {
@@ -53,7 +52,6 @@ export default {
         qty: 1
       }
       this.$http.post(api, { data: cart }).then((response) => {
-        // console.log(response)
         this.$httpMessageState(response, '加入購物車')
         this.status.loadingItem = ''
         this.emitter.emit('updatecart')

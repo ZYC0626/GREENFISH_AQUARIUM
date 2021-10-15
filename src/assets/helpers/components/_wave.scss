@@ -2,8 +2,6 @@
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-    // width: 450px;
-    // height: 450px;
     width: 100%;
     text-align: center;
     animation: water-waves linear infinite;
@@ -88,5 +86,4 @@
 .wave-bottom {
     background: (linear-gradient(to bottom, #b2eefa, transparent 70%));
     height: 150px;
-    // background: #b2eefa;//#f8f9fa
 }

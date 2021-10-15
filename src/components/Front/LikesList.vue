@@ -23,7 +23,7 @@
         </div>
         <div class="row g-0 mb-3">
           <div class="col-5">
-            <div class="likeItemImg" :style="{ 'background-image': 'url(' + item.imageUrl + ')' }"></div>
+            <div class="likeItemImg" :style="{ 'background-image': `url(${item.imageUrl})` }"></div>
           </div>
           <div
             class="
@@ -60,7 +60,6 @@
 </template>
 
 <script>
-// import Offcanvas from 'bootstrap/js/dist/offcanvas'
 export default {
   data () {
     return {
@@ -83,7 +82,6 @@ export default {
       this.$router.push('/products/all')
     },
     updateLikes (data) {
-      // console.log(data)
       this.removeId = data.id
       setTimeout(() => {
         this.likes = this.likes.filter((x) => {
@@ -91,7 +89,6 @@ export default {
         })
         this.likesId = this.likes.map(x => x.id)
         this.saveLocalStorage(this.likes)
-        // this.messagePush()
         // 改變Like
         if (this.$route.name === 'products') {
           this.emitter.emit('updatelike')

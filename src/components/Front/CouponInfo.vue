@@ -39,7 +39,6 @@ export default {
   },
   methods: {
     copyCoupon () {
-      // console.log('copyCoupon')
       const dummy = document.createElement('input')
       const text = 'GFISH88'
       document.body.appendChild(dummy)
