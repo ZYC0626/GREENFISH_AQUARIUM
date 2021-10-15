@@ -38,6 +38,8 @@ export default {
         if (!res.data.success) {
           this.$router.push('/login')
         }
+      }).catch(error => {
+        console.log(error)
       })
   }
 }

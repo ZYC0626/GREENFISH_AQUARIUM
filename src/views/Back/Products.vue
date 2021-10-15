@@ -96,6 +96,8 @@ export default {
           this.products = res.data.products
           this.pagination = res.data.pagination
         }
+      }).catch(error => {
+        console.log(error)
       })
     },
     openModal (isNew, item) {
@@ -124,6 +126,8 @@ export default {
           this.isLoading = false
           delProdModal.hideModal()
           this.getProducts()
+        }).catch(error => {
+          console.log(error)
         })
     },
     updateProduct (item) {

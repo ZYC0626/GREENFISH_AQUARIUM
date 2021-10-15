@@ -80,6 +80,8 @@ export default {
         this.cart = response.data.data
         this.count = this.cart.carts.length
         this.coupon = this.count > 0 ? (this.cart.carts[0].coupon ? this.cart.carts[0].coupon.code : '') : ''
+      }).catch(error => {
+        console.log(error)
       })
     },
     delCart (item) {
@@ -88,6 +90,8 @@ export default {
         .then((res) => {
           this.$httpMessageState(res, '從購物車移除')
           this.getCart()
+        }).catch(error => {
+          console.log(error)
         })
     }
   },

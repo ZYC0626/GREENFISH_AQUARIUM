@@ -129,6 +129,8 @@ export default {
             this.order = res.data.order
             this.products = res.data.order.products
           }
+        }).catch(error => {
+          console.log(error)
         })
     },
     payOrder () {
@@ -138,6 +140,8 @@ export default {
           if (res.data.success) {
             this.getOrder()
           }
+        }).catch(error => {
+          console.log(error)
         })
     }
   },

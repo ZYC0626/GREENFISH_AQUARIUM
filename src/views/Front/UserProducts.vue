@@ -112,6 +112,8 @@ export default {
           }
         }
         this.isLoading = false
+      }).catch(error => {
+        console.log(error)
       })
     },
     getLikes () {

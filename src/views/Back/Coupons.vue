@@ -100,6 +100,8 @@ export default {
       this.$http.get(url, this.tempProduct).then((response) => {
         this.coupons = response.data.coupons
         this.isLoading = false
+      }).catch(error => {
+        console.log(error)
       })
     },
     updateCoupon (tempCoupon) {
@@ -126,6 +128,8 @@ export default {
         const delComponent = this.$refs.delModal
         delComponent.hideModal()
         this.getCoupons()
+      }).catch(error => {
+        console.log(error)
       })
     }
   },

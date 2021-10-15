@@ -260,6 +260,8 @@ export default {
           this.proudcts = response.data.products
         }
         this.isLoading = false
+      }).catch(error => {
+        console.log(error)
       })
     },
     reworkCarousel () {

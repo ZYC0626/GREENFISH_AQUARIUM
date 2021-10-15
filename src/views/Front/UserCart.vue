@@ -231,6 +231,8 @@ export default {
         this.isLoading = false
         this.cart = response.data.data
         this.emitter.emit('updatecart')
+      }).catch(error => {
+        console.log(error)
       })
     },
     countButton (item, value) {
@@ -256,6 +258,8 @@ export default {
         this.isLoading = false
         this.status.loadingItem = ''
         this.$httpMessageState(res, '修改商品數量')
+      }).catch(error => {
+        console.log(error)
       })
     },
     delCart (item) {
@@ -269,6 +273,8 @@ export default {
           this.$httpMessageState(res, '從購物車移除')
           this.isLoading = false
           this.getCart()
+        }).catch(error => {
+          console.log(error)
         })
     },
     addCouponCode () {
@@ -282,6 +288,8 @@ export default {
           this.$httpMessageState(res, '套用優惠碼')
           this.isLoading = false
           this.getCart()
+        }).catch(error => {
+          console.log(error)
         })
     }
   },

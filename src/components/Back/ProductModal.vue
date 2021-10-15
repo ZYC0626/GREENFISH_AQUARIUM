@@ -211,6 +211,8 @@ export default {
             this.tempProduct.imageUrl = res.data.imageUrl
             document.getElementById(select).value = ''
           }
+        }).catch(error => {
+          console.log(error)
         })
     }
   },

@@ -115,6 +115,8 @@ export default {
         this.isLoading = false
         this.emitter.emit('updatecart')
         this.$router.push(`/checkoutPay/${response.data.orderId}`)
+      }).catch(error => {
+        console.log(error)
       })
     }
   }

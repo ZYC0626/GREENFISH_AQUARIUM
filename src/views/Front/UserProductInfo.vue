@@ -166,6 +166,8 @@ export default {
           this.getSameCategoryProdutc()
           this.changeWindowY()
         }
+      }).catch(error => {
+        console.log(error)
       })
     },
     addCart () {
@@ -181,6 +183,8 @@ export default {
         if (response.data.success) {
           this.emitter.emit('updatecart')
         }
+      }).catch(error => {
+        console.log(error)
       })
     },
     getLikes () {
@@ -226,6 +230,8 @@ export default {
           response.data.products.filter(x => x.category === this.product.category).length > 1 ? response.data.products.filter(x => x.category === this.product.category) : response.data.products
         }
         this.isLoading = false
+      }).catch(error => {
+        console.log(error)
       })
     },
     changeWindowY () {

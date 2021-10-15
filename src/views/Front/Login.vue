@@ -75,6 +75,8 @@ export default {
             document.cookie = `hexToken=${token}; expires=${new Date(expired)}`
             this.$router.push('/dashboard/products')
           }
+        }).catch(error => {
+          console.log(error)
         })
     }
   }

@@ -55,6 +55,8 @@ export default {
         this.$httpMessageState(response, '加入購物車')
         this.status.loadingItem = ''
         this.emitter.emit('updatecart')
+      }).catch(error => {
+        console.log(error)
       })
     },
     likeProd (item) {

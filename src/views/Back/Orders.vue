@@ -120,6 +120,8 @@ export default {
         this.orders = response.data.orders
         this.pagination = response.data.pagination
         this.isLoading = false
+      }).catch(error => {
+        console.log(error)
       })
     },
     openModal (isNew, item) {
@@ -143,6 +145,8 @@ export default {
         this.isLoading = false
         this.getOrders(this.currentPage)
         this.$httpMessageState(response, '更新付款狀態')
+      }).catch(error => {
+        console.log(error)
       })
     },
     delOrder () {
@@ -152,6 +156,8 @@ export default {
         const delComponent = this.$refs.delModal
         delComponent.hideModal()
         this.getOrders(this.currentPage)
+      }).catch(error => {
+        console.log(error)
       })
     }
   },
