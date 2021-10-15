@@ -174,8 +174,13 @@ export default {
       }
     }
   },
-  created () {
+  unmounted () {
+    this.emitter.off('updatelike', this.getLikes)
+  },
+  mounted () {
     this.emitter.on('updatelike', this.getLikes)
+  },
+  created () {
     this.category = this.$route.params.category
     this.getLikes()
   }

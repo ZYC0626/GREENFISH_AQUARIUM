@@ -17,6 +17,10 @@ export default {
     }
   },
   inject: ['emitter'],
+  unmounted () {
+    // If handler is omitted, all handlers of the given type are removed.
+    this.emitter.off('push-message')
+  },
   mounted () {
     this.emitter.on('push-message', (message) => {
       const { style = 'success', title, content } = message

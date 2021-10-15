@@ -235,11 +235,16 @@ export default {
       window.scrollTo({ top: y, behavior: 'smooth' })
     }
   },
+  unmounted () {
+    this.emitter.off('updatelikeId', this.getLikes)
+  },
+  mounted () {
+    this.emitter.on('updatelikeId', this.getLikes)
+  },
   created () {
     this.id = this.$route.params.productId
     this.getLikes()
     this.getProduct()
-    this.emitter.on('updatelikeId', this.getLikes)
   }
 }
 </script>

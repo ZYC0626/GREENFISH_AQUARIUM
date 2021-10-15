@@ -101,9 +101,14 @@ export default {
     }
   },
   inject: ['emitter'],
+  unmounted () {
+    this.emitter.off('updatecart', this.getCart)
+  },
+  mounted () {
+    this.emitter.on('updatecart', this.getCart)
+  },
   created () {
     this.getCart()
-    this.emitter.on('updatecart', this.getCart)
     if (this.$route.fullPath === '/cart' || this.$route.fullPath === '/checkoutInfo') {
       this.lock = true
     }
