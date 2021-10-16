@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary fw-700">
     <div class="container-fluid">
       <router-link to="/dashboard/products" class="navbar-brand m-0"><img src="@/assets/images/LOGOWhite.png" height="50" alt="LOGO" /></router-link>
       <button

@@ -16,7 +16,7 @@
   <section class="container py-4" ref="content">
     <a href="#" @click.prevent="$router.go(-1)"><i class="bi bi-arrow-left me-3 fs-2"></i></a>
     <nav>
-      <ol class="breadcrumb">
+      <ol class="breadcrumb fw-700">
         <li class="breadcrumb-item">
           <router-link to="/products/all" class="text-decoration-none">全部</router-link>
         </li>

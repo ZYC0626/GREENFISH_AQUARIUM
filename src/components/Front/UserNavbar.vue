@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-md navbar-light bg-xl-transparent fixed-top transitionNavbar"
+  <nav class="navbar navbar-expand-md navbar-light bg-xl-transparent fixed-top transitionNavbar fw-700"
   >
     <div class="container-fluid px-0">
       <button

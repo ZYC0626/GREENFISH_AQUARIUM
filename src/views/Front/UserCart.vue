@@ -74,7 +74,7 @@
               </td>
             </tr>
           </tbody>
-          <tfoot>
+          <tfoot class="fw-600">
             <tr>
               <td colspan="2">總計 :</td>
               <td class="text-end">NT$ {{ $filters.currency(cart.total) }}</td>
@@ -159,7 +159,7 @@
               </td>
             </tr>
           </tbody>
-          <tfoot>
+          <tfoot class="fw-600">
             <tr>
               <td>總計 :</td>
               <td class="text-end">NT$ {{ $filters.currency(cart.total) }}</td>
